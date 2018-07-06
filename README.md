@@ -1,4 +1,4 @@
-# ExFAT support for Mac OS X 10.5 Leopard and 10.4 Tiger (via Homebrew and Fuse OS X)
+# ExFAT support for Mac OS X 10.5 Leopard and 10.4 Tiger (via Homebrew and Fuse for macOS)
 This Homebrew formula enables *command line* ExFAT filesystem support on older PPC Macs running 10.5 Leopard or 10.4 Tiger (not tested) via [Tigerbrew](https://github.com/mistydemeo/tigerbrew), [fuse-exfat](https://github.com/relan/exfat), and [Fuse for macOS](https://osxfuse.github.io/). 
 
 Fuse for macOS requires Terminal commands to mount and eject ExFAT drives, they won't automatically appear in the Finder.
