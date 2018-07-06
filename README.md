@@ -31,7 +31,7 @@ brew install --HEAD https://raw.githubusercontent.com/daniel-toman/homebrew-exfa
 ```
 
 ## Complete installation guide (from scratch)
-If you don't already have Homebrew / Tigerbrew installed on your Mac, here is a quick guide to all the necessary steps to enable exFAT support. It will take roughly an hour or two to download and compile all the code needed.
+If you don't already have Homebrew / Tigerbrew installed on your Mac, here is a quick guide to all the necessary steps to enable exFAT support. It will take roughly an hour or two on a G4 to download and compile all the code needed.
 
 1. Download and Install [XCode 3.1.4](https://download.developer.apple.com/Developer_Tools/xcode_3.1.4_developer_tools/xcode314_2809_developerdvd.dmg) (for Leopard) or [XCode 2.5](https://download.developer.apple.com/Developer_Tools/xcode_2.5_developer_tools/xcode25_8m2558_developerdvd.dmg) (for Tiger). *May not be strictly required, but helpful.*
 1. Download and install [Fuse for macOS](https://osxfuse.github.io/) (for Leopard) and choose MacFUSE compatibility layer. On Tiger, try using [MacFUSE](https://code.google.com/archive/p/macfuse/downloads) instead (untested).
@@ -51,12 +51,12 @@ If you don't already have Homebrew / Tigerbrew installed on your Mac, here is a 
 ## Usage
 1. Connect your exFAT-formatted drive. When Finder complains "The disk you inserted was not readable" click **Ignore.**
 1. In Terminal, run `diskutil list` and note the IDENTIFIER of your exFAT drive partition. It might be incorrectly labeled as "Windows_NTFS" format. For example, my 32GB exFAT flash drive showed up like this:
-```
-/dev/disk3
-   #:                       TYPE NAME                    SIZE       IDENTIFIER
-   0:     FDisk_partition_scheme                        *29.2 Gi    disk3
-   1:               Windows_NTFS                         29.2 Gi    disk3s1
-```
+	```
+	/dev/disk3
+	   #:                       TYPE NAME                    SIZE       IDENTIFIER
+	   0:     FDisk_partition_scheme                        *29.2 Gi    disk3
+	   1:               Windows_NTFS                         29.2 Gi    disk3s1
+	```
 1. Create a folder to serve as a mount point for this drive. For example a folder called "exfat" in your Home folder: `mkdir ~/exfat` (This only needs to be done once.)
 1. To mount the exFAT partition into this folder, run `mount.exfat /dev/disk3s1 ~/exfat` (Note: you must refer to your specific exFAT partition (ie **/dev/disk3s1**), just **/dev/disk3** will not work.)
 1. If all is working, that mount point (ie *~/exfat*) will become an alias to the drive, and it will appear as a network drive "OSXFUSE Volume 0" on the Desktop, and under **Go > Computer** in Finder.
