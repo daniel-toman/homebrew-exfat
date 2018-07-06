@@ -17,18 +17,22 @@ Command-line utilities included:
 At the Terminal, run `mount.exfat` to see basic usage syntax, and see the [fuse-exfat project on GitHub](https://github.com/relan/exfat) for further information.
 
 ## Tigerbrew/Homebrew installation instructions
-If you already have Homebrew installed, then run `brew tap daniel-toman/exfat` and then `brew install --HEAD exfat`.
+If you already have Tigerbrew / Homebrew installed, then run: 
+1.`brew tap daniel-toman/exfat` and then 
+2.`brew install --HEAD exfat`
 
-Or install via URL (which will not receive updates):
+Or install via URL (won't receive updates):
 ```
 brew install --HEAD https://raw.githubusercontent.com/daniel-toman/homebrew-exfat/master/exfat.rb
 ```
 
-## Complete guide to adding ExFAT support to OS X 10.5 Leopard and 10.4 Tiger
-1. Download and Install [XCode 3.1.4](https://download.developer.apple.com/Developer_Tools/xcode_3.1.4_developer_tools/xcode314_2809_developerdvd.dmg) (for Leopard) or [XCode 2.5](https://download.developer.apple.com/Developer_Tools/xcode_2.5_developer_tools/xcode25_8m2558_developerdvd.dmg) (for Tiger). *May not be strictly required.*
+## Complete installation guide (from scratch)
+If you don't already have Homebrew / Tigerbrew installed on your Mac, here is a quick guide to all the necessary steps to enable ExFAT support. It will take roughly an hour or two to download and compile all the code needed.
+
+1. Download and Install [XCode 3.1.4](https://download.developer.apple.com/Developer_Tools/xcode_3.1.4_developer_tools/xcode314_2809_developerdvd.dmg) (for Leopard) or [XCode 2.5](https://download.developer.apple.com/Developer_Tools/xcode_2.5_developer_tools/xcode25_8m2558_developerdvd.dmg) (for Tiger). *May not be strictly required, but helpful.*
 1. Download and install [Fuse for macOS](https://osxfuse.github.io/) (for Leopard) and choose MacFUSE compatibility layer. On Tiger, try using [MacFUSE](https://code.google.com/archive/p/macfuse/downloads) instead (untested).
-1. Install [Tigerbrew](https://github.com/mistydemeo/tigerbrew) - *quick install commands in Terminal:*
-	* `cat - >> ~/.bash_profile` (after hitting Return, it waits for user input, then enter the next item)
+1. Install [Tigerbrew](https://github.com/mistydemeo/tigerbrew) following their instructions. *Tigerbrew installation command cheat sheet:*
+	* `cat - >> ~/.bash_profile` *(after hitting Return, it waits for user input, so enter the next item)*
 	* `export PATH=/usr/local/sbin:/usr/local/bin:$PATH`
 	* `Ctrl+D` to save
 	* `ruby -e "$(curl -fsSkL raw.github.com/mistydemeo/tigerbrew/go/install)"` (press Return to accept & install)
@@ -37,11 +41,12 @@ brew install --HEAD https://raw.githubusercontent.com/daniel-toman/homebrew-exfa
 	* `brew install git` (if recommended by brew doctor)
 	* `brew update`
 1. `brew tap daniel-toman/exfat` to add this repo
-1. `brew install --HEAD exfat` to install fuse-exfat
+1. `brew install --HEAD exfat` to install fuse-exfat. You're done!
 
 ## Usage
 1. Connect your ExFAT-formatted drive. When Finder complains "The disk you inserted was not readable" click **Ignore.**
-1. In Terminal, run `diskutil list` and note the IDENTIFIER of your ExFAT drive partition. It might be incorrectly labeled as "Windows_NTFS" format. For example, my 32GB ExFAT flash drive showed up like this:```
+1. In Terminal, run `diskutil list` and note the IDENTIFIER of your ExFAT drive partition. It might be incorrectly labeled as "Windows_NTFS" format. For example, my 32GB ExFAT flash drive showed up like this:
+```
 /dev/disk3
    #:                       TYPE NAME                    SIZE       IDENTIFIER
    0:     FDisk_partition_scheme                        *29.2 Gi    disk3
