@@ -10,8 +10,6 @@ class Exfat < Formula
     depends_on 'pkg-config' => :build
   end
 
-  depends_on :macos => :mavericks
-
   def install
     system "autoreconf", "-fiv"
     ENV.append_path "PKG_CONFIG_LIBDIR", "#{HOMEBREW_PREFIX}/lib/pkgconfig"
