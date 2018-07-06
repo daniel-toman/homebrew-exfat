@@ -19,7 +19,7 @@ At the Terminal, run `mount.exfat` to see basic usage syntax, and see the [fuse-
 ## Tigerbrew/Homebrew installation instructions
 If you already have Tigerbrew / Homebrew installed, then run: 
 1.`brew tap daniel-toman/exfat` and then 
-2.`brew install --HEAD exfat`
+1.`brew install --HEAD exfat`
 
 Or install via URL (won't receive updates):
 ```
@@ -31,7 +31,8 @@ If you don't already have Homebrew / Tigerbrew installed on your Mac, here is a 
 
 1. Download and Install [XCode 3.1.4](https://download.developer.apple.com/Developer_Tools/xcode_3.1.4_developer_tools/xcode314_2809_developerdvd.dmg) (for Leopard) or [XCode 2.5](https://download.developer.apple.com/Developer_Tools/xcode_2.5_developer_tools/xcode25_8m2558_developerdvd.dmg) (for Tiger). *May not be strictly required, but helpful.*
 1. Download and install [Fuse for macOS](https://osxfuse.github.io/) (for Leopard) and choose MacFUSE compatibility layer. On Tiger, try using [MacFUSE](https://code.google.com/archive/p/macfuse/downloads) instead (untested).
-1. Install [Tigerbrew](https://github.com/mistydemeo/tigerbrew) following their instructions. *Tigerbrew installation command cheat sheet:*
+1. Install [Tigerbrew](https://github.com/mistydemeo/tigerbrew) following their instructions. 
+	* **Tigerbrew installation command cheat sheet:**
 	* `cat - >> ~/.bash_profile` *(after hitting Return, it waits for user input, so enter the next item)*
 	* `export PATH=/usr/local/sbin:/usr/local/bin:$PATH`
 	* `Ctrl+D` to save
@@ -54,7 +55,7 @@ If you don't already have Homebrew / Tigerbrew installed on your Mac, here is a 
 ```
 1. Create a folder to serve as a mount point for this drive. For example a folder called "exfat" in your Home folder: `mkdir ~/exfat`
 1. Then mount the ExFAT partition into this folder, ie `mount.exfat /dev/disk3s1 ~/exfat` (Note: you must refer to the specific ExFAT partition (ie **/dev/disk3s1**), just **/dev/disk3** will not work.)
-1. If all is working, that mount point (ie *~/exfat*) will become an alias to the drive, and it will appear as a network drive "OSXFUSE Volume 0" on the Desktop and under *Go > Computer* in Finder.
-1. To eject or unmount the drive, use the **umount** command plus the drive name or mount point, ie: `umount ~/exfat` The FUSE drive can't be ejected from the Finder.
+1. If all is working, that mount point (ie *~/exfat*) will become an alias to the drive, and it will appear as a network drive "OSXFUSE Volume 0" on the Desktop and under **Go > Computer** in Finder.
+1. To eject or unmount the drive, use the **umount** command, ie: `umount ~/exfat` The FUSE drive can't be ejected from the Finder.
 
-> Kudos to @gmerlino for the original (Mavericks-only) [ExFAT Homebrew formula](https://github.com/gmerlino/homebrew-exfat), @relan for [exfat](https://github.com/relan/exfat), @mistydemeo for [Tigerbrew](https://github.com/mistydemeo/tigerbrew), @osxfuse for continuing to support Leopard and PPC, and of course the creators of [Homebrew](https://brew.sh/), [MacFUSE](https://code.google.com/archive/p/macfuse/), and [FUSE](https://github.com/libfuse/libfuse).
+> Kudos to @gmerlino for the original (Mavericks-only) [ExFAT Homebrew formula](https://github.com/gmerlino/homebrew-exfat), @relan for [exfat](https://github.com/relan/exfat), @mistydemeo for [Tigerbrew](https://github.com/mistydemeo/tigerbrew), @osxfuse for continuing to support [Fuse for macOS](https://github.com/osxfuse/osxfuse) on Leopard and PPC, and of course the creators of [Homebrew](https://brew.sh/), [MacFUSE](https://code.google.com/archive/p/macfuse/), and [FUSE](https://github.com/libfuse/libfuse).
