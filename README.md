@@ -16,7 +16,9 @@ Command-line utilities included:
 
 At the Terminal, run `mount.exfat` to see basic usage syntax, and see the [fuse-exfat project on GitHub](https://github.com/relan/exfat) for further information.
 
-## Tigerbrew/Homebrew installation instructions
+## Tigerbrew / Homebrew installation instructions
+[Tigerbrew](https://github.com/mistydemeo/tigerbrew) is a version of the [Homebrew](https://brew.sh/) package manager for PowerPC Macs running OS X 10.5 Leopard or 10.4 Tiger.
+
 If you already have Tigerbrew / Homebrew installed, then run: 
 1. `brew tap daniel-toman/exfat` and then 
 1. `brew install --HEAD exfat`
@@ -36,7 +38,7 @@ If you don't already have Homebrew / Tigerbrew installed on your Mac, here is a 
 	* `cat - >> ~/.bash_profile` *(after hitting Return, it waits for user input, so enter the next item)*
 	* `export PATH=/usr/local/sbin:/usr/local/bin:$PATH`
 	* `Ctrl+D` to save
-	* `ruby -e "$(curl -fsSkL raw.github.com/mistydemeo/tigerbrew/go/install)"` (press Return to accept & install)
+	* `ruby -e "$(curl -fsSkL raw.github.com/mistydemeo/tigerbrew/go/install)"` *(press Return to accept & install)*
 	* `brew doctor` after installation. Note any warnings and address as needed.
 	* `brew install curl` (if recommended by brew doctor)
 	* `brew install git` (if recommended by brew doctor)
@@ -53,9 +55,9 @@ If you don't already have Homebrew / Tigerbrew installed on your Mac, here is a 
    0:     FDisk_partition_scheme                        *29.2 Gi    disk3
    1:               Windows_NTFS                         29.2 Gi    disk3s1
 ```
-1. Create a folder to serve as a mount point for this drive. For example a folder called "exfat" in your Home folder: `mkdir ~/exfat` (this only needs to be done once.)
+1. Create a folder to serve as a mount point for this drive. For example a folder called "exfat" in your Home folder: `mkdir ~/exfat` (This only needs to be done once.)
 1. To mount the ExFAT partition into this folder, run `mount.exfat /dev/disk3s1 ~/exfat` (Note: you must refer to your specific ExFAT partition (ie **/dev/disk3s1**), just **/dev/disk3** will not work.)
-1. If all is working, that mount point (ie *~/exfat*) will become an alias to the drive, and it will appear as a network drive "OSXFUSE Volume 0" on the Desktop and under **Go > Computer** in Finder.
+1. If all is working, that mount point (ie *~/exfat*) will become an alias to the drive, and it will appear as a network drive "OSXFUSE Volume 0" on the Desktop, and under **Go > Computer** in Finder.
 1. To eject or unmount the drive, use the **umount** command, ie: `umount ~/exfat` The FUSE drive can't be ejected from the Finder.
 
 After initial setup, whenever you connect an ExFAT drive you'll just enter `mount.exfat /dev/disk3s1 ~/exfat` to mount the drive, and when you want to eject it later, enter `umount ~/exfat`. (Where /dev/disk3s1 is the name of your particular ExFAT drive's partition.)
