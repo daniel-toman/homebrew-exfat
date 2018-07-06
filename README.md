@@ -18,8 +18,8 @@ At the Terminal, run `mount.exfat` to see basic usage syntax, and see the [fuse-
 
 ## Tigerbrew/Homebrew installation instructions
 If you already have Tigerbrew / Homebrew installed, then run: 
-1.`brew tap daniel-toman/exfat` and then 
-1.`brew install --HEAD exfat`
+1. `brew tap daniel-toman/exfat` and then 
+1. `brew install --HEAD exfat`
 
 Or install via URL (won't receive updates):
 ```
@@ -53,9 +53,11 @@ If you don't already have Homebrew / Tigerbrew installed on your Mac, here is a 
    0:     FDisk_partition_scheme                        *29.2 Gi    disk3
    1:               Windows_NTFS                         29.2 Gi    disk3s1
 ```
-1. Create a folder to serve as a mount point for this drive. For example a folder called "exfat" in your Home folder: `mkdir ~/exfat`
-1. Then mount the ExFAT partition into this folder, ie `mount.exfat /dev/disk3s1 ~/exfat` (Note: you must refer to the specific ExFAT partition (ie **/dev/disk3s1**), just **/dev/disk3** will not work.)
+1. Create a folder to serve as a mount point for this drive. For example a folder called "exfat" in your Home folder: `mkdir ~/exfat` (this only needs to be done once.)
+1. To mount the ExFAT partition into this folder, run `mount.exfat /dev/disk3s1 ~/exfat` (Note: you must refer to your specific ExFAT partition (ie **/dev/disk3s1**), just **/dev/disk3** will not work.)
 1. If all is working, that mount point (ie *~/exfat*) will become an alias to the drive, and it will appear as a network drive "OSXFUSE Volume 0" on the Desktop and under **Go > Computer** in Finder.
 1. To eject or unmount the drive, use the **umount** command, ie: `umount ~/exfat` The FUSE drive can't be ejected from the Finder.
+
+After initial setup, whenever you connect an ExFAT drive you'll just enter `mount.exfat /dev/disk3s1 ~/exfat` to mount the drive, and when you want to eject it later, enter `umount ~/exfat`. (Where /dev/disk3s1 is the name of your particular ExFAT drive's partition.)
 
 > Kudos to @gmerlino for the original (Mavericks-only) [ExFAT Homebrew formula](https://github.com/gmerlino/homebrew-exfat), @relan for [exfat](https://github.com/relan/exfat), @mistydemeo for [Tigerbrew](https://github.com/mistydemeo/tigerbrew), @osxfuse for continuing to support [Fuse for macOS](https://github.com/osxfuse/osxfuse) on Leopard and PPC, and of course the creators of [Homebrew](https://brew.sh/), [MacFUSE](https://code.google.com/archive/p/macfuse/), and [FUSE](https://github.com/libfuse/libfuse).
