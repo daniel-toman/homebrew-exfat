@@ -21,13 +21,14 @@ At the Terminal, run `mount.exfat` to see basic usage syntax, and see the [fuse-
 
 Homebrew, similar to [MacPorts](https://www.macports.org/), is a great way to add software to your Mac, particularly open source, command line, and developer tools. Especially for older PowerPC Macs, it can enable you to run more recent versions of today's software by compiling it yourself from the source code, even though most software is no longer offered with PowerPC support. It automates the process of compiling source code, making it easy for non-developers to use.
 
-If you already have Tigerbrew / Homebrew installed, then run: 
-1. `brew tap daniel-toman/exfat` and then 
-1. `brew install --HEAD exfat`
+If you already have Tigerbrew / Homebrew installed, then:
+1. Download and install [Fuse for macOS](https://osxfuse.github.io/) (for Leopard) and choose MacFUSE compatibility layer. On Tiger, try using [MacFUSE](https://code.google.com/archive/p/macfuse/downloads) instead (untested).
+1. `brew tap daniel-toman/exfat`
+1. `brew install exfat`
 
 Or install via URL (won't receive updates):
 ```
-brew install --HEAD https://raw.githubusercontent.com/daniel-toman/homebrew-exfat/master/exfat.rb
+brew install https://raw.githubusercontent.com/daniel-toman/homebrew-exfat/master/exfat.rb
 ```
 
 ## Complete installation guide (from scratch)
@@ -37,10 +38,8 @@ If you don't already have Homebrew / Tigerbrew installed on your Mac, here is a 
 1. Download and install [Fuse for macOS](https://osxfuse.github.io/) (for Leopard) and choose MacFUSE compatibility layer. On Tiger, try using [MacFUSE](https://code.google.com/archive/p/macfuse/downloads) instead (untested).
 1. Install [Tigerbrew](https://github.com/mistydemeo/tigerbrew) following their instructions. 
 	* **Tigerbrew installation command cheat sheet:**
-	* `cat - >> ~/.bash_profile` *(after hitting Return, it waits for user input, so enter the next item)*
-	* `export PATH=/usr/local/sbin:/usr/local/bin:$PATH`
-	* `Ctrl+D` to save
-	* `ruby -e "$(curl -fsSkL raw.github.com/mistydemeo/tigerbrew/go/install)"` *(press Return to accept & install)*
+	* `echo export PATH=/usr/local/sbin:/usr/local/bin:\$PATH >> ~/.bash_profile`
+	* `ruby -e "$(curl -fsSkL raw.github.com/mistydemeo/tigerbrew/go/install)"`
 	* `brew doctor` after installation. Note any warnings and address as needed.
 	* `brew install curl` (if recommended by brew doctor)
 	* `brew install git` (if recommended by brew doctor)
