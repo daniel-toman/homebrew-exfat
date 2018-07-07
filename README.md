@@ -22,20 +22,20 @@ At the Terminal, run `mount.exfat` to see basic usage syntax, and see the [fuse-
 Homebrew, similar to [MacPorts](https://www.macports.org/), is a great way to add software to your Mac, particularly open source, command line, and developer tools. Especially for older PowerPC Macs, it can enable you to run more recent versions of today's software by compiling it yourself from the source code, even though most software is no longer offered with PowerPC support. It automates the process of compiling source code, making it easy for non-developers to use.
 
 If you already have Tigerbrew / Homebrew installed, then:
-1. Download and install [Fuse for macOS](https://osxfuse.github.io/) (for Leopard) and choose MacFUSE compatibility layer. On Tiger, try using [MacFUSE](https://code.google.com/archive/p/macfuse/downloads) instead (untested).
+1. Download [Fuse for macOS](https://osxfuse.github.io/) (for Leopard) and install with MacFUSE compatibility layer. On Tiger, try using [MacFUSE](https://code.google.com/archive/p/macfuse/downloads) instead (untested).
 1. `brew tap daniel-toman/exfat`
-1. `brew install exfat`
+1. `brew install --HEAD exfat`
 
 Or install via URL (won't receive updates):
 ```
-brew install https://raw.githubusercontent.com/daniel-toman/homebrew-exfat/master/exfat.rb
+brew install --HEAD https://raw.githubusercontent.com/daniel-toman/homebrew-exfat/master/Formula/exfat.rb
 ```
 
 ## Complete installation guide (from scratch)
 If you don't already have Homebrew / Tigerbrew installed on your Mac, here is a quick guide to all the necessary steps to enable exFAT support. It will take roughly an hour or two on a G4 to download and compile all the code needed.
 
 1. Download and Install [XCode 3.1.4](https://download.developer.apple.com/Developer_Tools/xcode_3.1.4_developer_tools/xcode314_2809_developerdvd.dmg) (for Leopard) or [XCode 2.5](https://download.developer.apple.com/Developer_Tools/xcode_2.5_developer_tools/xcode25_8m2558_developerdvd.dmg) (for Tiger). *May not be strictly required, but helpful.*
-1. Download and install [Fuse for macOS](https://osxfuse.github.io/) (for Leopard) and choose MacFUSE compatibility layer. On Tiger, try using [MacFUSE](https://code.google.com/archive/p/macfuse/downloads) instead (untested).
+1. Download [Fuse for macOS](https://osxfuse.github.io/) (for Leopard) and install with MacFUSE compatibility layer. On Tiger, try using [MacFUSE](https://code.google.com/archive/p/macfuse/downloads) instead (untested).
 1. Install [Tigerbrew](https://github.com/mistydemeo/tigerbrew) following their instructions. 
 	* **Tigerbrew installation command cheat sheet:**
 	* `echo export PATH=/usr/local/sbin:/usr/local/bin:\$PATH >> ~/.bash_profile`
