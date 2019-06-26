@@ -5,9 +5,9 @@ class Exfat < Formula
   head do
     url "https://github.com/relan/exfat.git"
 
-    depends_on "automake" => :build
     depends_on "autoconf" => :build
-    depends_on 'pkg-config' => :build
+    depends_on "automake" => :build
+    depends_on "pkg-config" => :build
   end
 
   def install
@@ -18,5 +18,9 @@ class Exfat < Formula
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
     system "make", "install"
+  end
+
+  test do
+    system "#{sbin}/fsck.exfat"
   end
 end
